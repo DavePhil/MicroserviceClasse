@@ -14,6 +14,7 @@ public class Classe {
     @Id
     @GeneratedValue
     private Integer id;
+    private String nom;
     @ManyToOne
     private Niveau niveau;
     @ManyToOne

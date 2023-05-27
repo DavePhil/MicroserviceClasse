@@ -18,5 +18,4 @@ public class Niveau {
     private String intitule;
 
 
-
 }
