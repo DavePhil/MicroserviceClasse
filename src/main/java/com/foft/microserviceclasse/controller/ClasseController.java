@@ -15,13 +15,14 @@ import java.util.Objects;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("MicroClasse")
 public class ClasseController {
 
     @Autowired
     ClasseService classeService;
 
     @PostMapping("/classe")
-    public ResponseEntity<Classe> createClasse(@RequestParam Niveau niveau, @RequestParam Specialite specialite){
+    public ResponseEntity<Classe> createClasse(@RequestParam("niveau") Niveau niveau, @RequestParam("specialite") Specialite specialite){
         Classe classe = new Classe();
         classe.setNiveau(niveau);
         classe.setSpecialite(specialite);

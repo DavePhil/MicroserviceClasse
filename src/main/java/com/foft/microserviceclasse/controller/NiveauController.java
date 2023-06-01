@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("MicroClasse")
 public class NiveauController {
     @Autowired
     private NiveauService niveauService;
@@ -38,5 +40,10 @@ public class NiveauController {
     public void deleteNiveau(@PathVariable("id") final Integer id) {
         if(!niveauService.getNiveau(id).isPresent()) throw new NotFoundException("Ce Niveau n'a pas été trouvé");
         niveauService.deleteNiveau(id);
+    }
+
+    @GetMapping("niveaux")
+    public List<Niveau> niveaux(){
+        return niveauService.getNiveaux();
     }
 }

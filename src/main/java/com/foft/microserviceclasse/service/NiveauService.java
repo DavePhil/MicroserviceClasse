@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,7 +20,7 @@ public class NiveauService {
         return niveauRepository.findById(id);
     }
 
-    public Iterable<Niveau> getNiveaux(){
+    public List<Niveau> getNiveaux(){
         return niveauRepository.findAll();
     }
 

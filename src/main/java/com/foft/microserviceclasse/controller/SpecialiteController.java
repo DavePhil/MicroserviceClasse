@@ -13,6 +13,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("MicroClasse")
 public class SpecialiteController {
 
     @Autowired
